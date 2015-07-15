@@ -15,7 +15,7 @@
         while (playing) {
 
             // Grab a random word from the WORDS array
-            var randomIndex = Math.floor(Math.random() * 4);
+            var randomIndex = Math.floor(Math.random() * (WORDS.length + 1));
             var randomWord = WORDS[randomIndex];
 
             // Grab the corresponding scrambled word from the SCRAMBLED array
@@ -23,11 +23,13 @@
 
             // prompt the user to guess the original word when given the scrambled word
             var guess = prompt("Guess the scrambled word: " + scrambledWord);
-
+            var guess = guess.toLowerCase();
+            console.log(guess)
             // If the user guesses wrong, tell them they were wrong and the right word.
             if (guess !== randomWord) {
                 alert("You guessed wrong! It was " + randomWord);
-            } else if (guess === randomWord) {
+            // } else if (guess === randomWord) {
+            } else {
                 alert("Wow, you are so smart. That's correct!");
             };
 
